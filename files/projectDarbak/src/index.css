@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #F8F5EF;
+    color: #0F1A14;
+    direction: rtl;
+    text-align: right;
+  }
+
+  ::selection {
+    background-color: rgba(0, 108, 53, 0.15);
+    color: #006C35;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .premium-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(0, 108, 53, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 108, 53, 0.10);
+    transform: translateY(-2px);
+  }
+
+  .gradient-saudi {
+    background: linear-gradient(135deg, #006C35 0%, #005C2D 50%, #004A24 100%);
+  }
+
+  .gradient-saudi-light {
+    background: linear-gradient(135deg, #E6F4ED 0%, #F8F5EF 100%);
+  }
+
+  .gradient-beige {
+    background: linear-gradient(135deg, #F8F5EF 0%, #FDFCF8 100%);
+  }
+
+  .text-gradient-saudi {
+    background: linear-gradient(135deg, #006C35 0%, #3A9E72 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 108, 53, 0.04) 0%,
+      rgba(0, 108, 53, 0.12) 50%,
+      rgba(0, 108, 53, 0.04) 100%
+    );
+    background-size: 200% 100%;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 108, 53, 0.2);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 108, 53, 0.35);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
